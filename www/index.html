@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript introduccion</title>
+    <body bgcolor="#d1c4e9">
+    <script>
+        let users = {"user1":{"pass":"test123","email":"test@test.com"},"user2":{"pass":"test123","email":"test@test.com"}};
+        function fer_login(){
+            console.log("Altoke");
+            let userlogin = document.getElementById("user")
+            let pass = document.getElementById("pass")
+            if (userlogin.value in users){
+                if (pass.value==users[userlogin.value]["pass"]){
+                    alert("Login correcto!!")
+                }
+                else{
+                    alert("ERROR: Contraseña no valida")
+                }
+            }
+            else{
+                alert("ERROR: Usuario incorrecto")
+            }
+        }
+        function fer_registre(){
+            console.log("Altoke");
+            let userReg = document.getElementById("userr")
+            let email = document.getElementById("email")
+            let passReg = document.getElementById("passr")
+            users[userReg.value]={"pass":passReg.value,"email":email.value}
+            alert("S'ha donat de alta satisfactoriament al usuari "+ userReg.value)
+            
+        }
+    </script>
+</head>
+<body>
+<h1>Login</h1>
+<form action="" style="background-color: #9575cd;">
+    <fieldset>
+    <label>User:</label><br>
+    <input type="text" name="username" id="user"><br>
+    <label>Password:</label><br>
+    <input type="password" name="passwd" id="pass"><br>
+    <input type="button" name="submit" value="Enviar" onclick="fer_login()">
+</fieldset>
+</form><br>
+<h1>Register</h1>
+<form action="" style="background-color: #9575cd;">
+    <fieldset>
+    <label>User:</label><br>
+    <input type="text" name="usernamer" id="userr"><br>
+    <label>Email:</label><br>
+    <input type="text" name="email" id="email"><br>
+    <label>Password:</label><br>
+    <input type="password" name="passwdr" id="passr"><br>
+    <input type="button" name="submit" value="Enviar" onclick="fer_registre()">
+    </fieldset>
+</form>
+</body>
+</html>
